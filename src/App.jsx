@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { createContext } from 'react';
+import './App.css';
+import CompA from './CompA';
+
+const Firstname = createContext();
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    
+      <Firstname.Provider value={"kunal"}>
+        <CompA/>
+      </Firstname.Provider>  
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+export { Firstname }; 
